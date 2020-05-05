@@ -50,7 +50,9 @@
       window.addEventListener("load", () => {
         navigator.serviceWorker.register("service-worker.js").then(reg => {
           console.log("We found your service worker file!", reg);
-        });
+        }).catch(function (err) {
+          console.log("Service Worker Failed to Register", err);
+        })
       });
     }
   </script>
